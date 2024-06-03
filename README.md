@@ -11,4 +11,6 @@ It has following features
 
 1. Do a npm init -y
 2. npm install express
+3. npm install zod
+4. npm install mongoose
 
