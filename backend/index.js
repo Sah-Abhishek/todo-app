@@ -47,6 +47,14 @@ app.put('/todos', async (req, res) => {
         })
         return;
     }
+    await todo.update({
+        _id: req.body.id
+    },{
+        completed: true
+    })
+    res.json({
+        message: "Todo marked as completed"
+    })
 
     
 })
@@ -58,14 +66,14 @@ app.get('/todos', async(req, res) => {
     res.json({
         todos
     })
-    await todo.update({
-        _id: req.body.id
-    },{
-        completed: true
-    })
-    res.json({
-        message: "Todo marked as completed"
-    })
+    // await todo.update({
+    //     _id: req.body.id
+    // },{
+    //     completed: true
+    // })
+    // res.json({
+    //     message: "Todo marked as completed"
+    // })
 } )
 
 app.listen(3000);
