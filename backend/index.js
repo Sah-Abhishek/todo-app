@@ -15,7 +15,7 @@ body {
 }
 */
 
-app.use(express.json);
+app.use(express.json());
 
 app.post('/todo', async(req, res) => {
     const createPayload = req.body;
@@ -52,7 +52,7 @@ app.put('/todos', async (req, res) => {
 })
 
 
-app.get('/todos', async(res, req) => {
+app.get('/todos', async(req, res) => {
     const todos = await todo.find();
     console.log(todos);
     res.json({
@@ -67,6 +67,8 @@ app.get('/todos', async(res, req) => {
         message: "Todo marked as completed"
     })
 } )
+
+app.listen(3000);
 
 // app.put('/completed', (req, res) = () => {
 
